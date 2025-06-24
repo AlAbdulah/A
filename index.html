@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر العبدالله - دراجات هوائية</title>
+    <title>متجر العبدالله | دراجات هوائية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -14,10 +14,7 @@
             --light: #DCF8C6;
             --text: #333;
             --gray: #f8f9fa;
-            --border: #e9ecef;
         }
-        
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -25,25 +22,11 @@
         }
         body {
             font-family: 'Tajawal', sans-serif;
-            background-color: var(--gray);
+            background: var(--gray);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
         }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        ul {
-            list-style: none;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Layout */
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
@@ -53,73 +36,185 @@
         header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        .header-container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
         .logo {
-            height: 50px;
+            height: 60px;
         }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-        .nav-links a {
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        .cart-icon {
-            position: relative;
-            font-size: 1.2rem;
-        }
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
+        .whatsapp-float {
             background: var(--primary);
             color: white;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            font-size: 0.7rem;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 10px;
         }
         
-        /* Hero Banner */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/VhGkwn1/image.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 30px;
+        /* Product Section */
+        .product-hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
         }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+        .gallery {
+            flex: 1;
+            min-width: 300px;
         }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 25px;
+        .main-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
-        .btn {
-            display: inline-block;
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .thumbnail:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        .details {
+            flex: 1;
+            min-width: 300px;
+        }
+        .product-title {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 24px;
+            color: #d82b2b;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #777;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        .features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 20px;
+        }
+        .features li:before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            right: 0;
+            font-size: 20px;
+        }
+        .whatsapp-btn {
+            display: block;
             background: var(--primary);
             color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 25px;
+            transition: all 0.3s;
+        }
+        .whatsapp-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-hero {
+                flex-direction: column;
+            }
+            .main-image {
+                max-height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <img src="https://i.ibb.co/0yYcz7hD/image.png" alt="متجر العبدالله" class="logo">
+            <a href="https://wa.me/966554685648" class="whatsapp-float">
+                <i class="fab fa-whatsapp"></i>
+                تواصل معنا
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Product -->
+    <div class="container">
+        <div class="product-hero">
+            <div class="gallery">
+                <img id="mainImage" src="https://i.ibb.co/VhGkwn1/image.png" alt="دراجة سونك" class="main-image">
+                <div class="thumbnails">
+                    <img src="https://i.ibb.co/VhGkwn1/image.png" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/fhGk9t4/Plezjg2n-SNs-KBPu3-Ud76-SSKc8w-Kavz-Lpo-Zbju-Pbt.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/Xf1JTLFn/zYHuxl-GHhgl-Z9-RD5nd-TFU4d-Du-Yj8c-P2v-EUXUJu-Gr.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/FqfYzLfQ/Ogwu-D0n-JVYR778f8-EPk-HICAr-Fpxu2g-Dw-W57-S1-F11.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/cXXw54Z0/jaco-VH5-UGj-Ci-ATiat-Q5-OXXRa-OBb-Yf3-Eoyp-ZBn6xg.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/pv3w2FT6/n3xbd-BJkqr-Oa0o-Vl-ZDGZZ0-Tt-YTv-JHym-ARM1-Law-G4.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/20L1rvZ2/w9oi-L6ojv-YS7s-Isp-X9-K7-Gz1-AEyxy-Ag-Yokd3s-MRvo.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/3xXvzFj/Zu-KI510-Ouq-Dsx-Zhd-DC2-Kpp-Ev6-IY5-MLcs-ZVviau-M8.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/MxnKr90G/Eg3h-G0-Facqp-XZs-ZWm-T899-AWn-K4-UIy-E8od-IS63-Axu.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                    <img src="https://i.ibb.co/dw2YVmCR/FGs-IZMUM55n-XGYIZfz-AUt-Uqh7-ORyd7-PLVs-UZus6p.webp" class="thumbnail" onclick="document.getElementById('mainImage').src=this.src">
+                </div>
+            </div>
+            
+            <div class="details">
+                <h1 class="product-title">دراجة سونك مع 14 هدية مجانية</h1>
+                <div class="price">
+                    559 ر.س
+                    <span class="old-price">799 ر.س</span>
+                </div>
+                
+                <ul class="features">
+                    <li>مقاس الدراجة: 26 انش</li>
+                    <li>الطول المناسب: 140-180سم</li>
+                    <li>5 ألوان متاحة</li>
+                    <li>إطار 17 بوصة</li>
+                    <li>21 سرعة (شيمانو)</li>
+                    <li>توصيل مجاني لجميع المدن</li>
+                    <li>الدفع عند الاستلام</li>
+                    <li>ضمان سنة ضد عيوب الصناعة</li>
+                </ul>
+                
+                <a href="https://wa.me/966554685648?text=مرحباً، أريد شراء 'دراجة سونك مع 14 هدية' بسعر 559 ر.س" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- No JavaScript needed - pure HTML/CSS solution -->
+</body>
+</html>
