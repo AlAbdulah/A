@@ -57,34 +57,21 @@
             flex: 1;
             min-width: 300px;
             padding: 20px;
+            text-align: center;
         }
         .main-image {
             width: 100%;
-            height: 400px;
+            max-height: 400px;
             object-fit: contain;
             cursor: zoom-in;
             transition: all 0.3s;
             border-radius: 10px;
             margin-bottom: 15px;
         }
-        .thumbnails {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-        .thumbnail {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border: 2px solid #eee;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .thumbnail:hover, .thumbnail.active {
-            border-color: var(--primary);
-            transform: scale(1.05);
+        .zoom-instruction {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
         }
         .details-section {
             flex: 1;
@@ -220,11 +207,7 @@
         <div class="product-hero">
             <div class="gallery-section">
                 <img id="mainImage" src="https://i.ibb.co/XkSkXgB6/image.png" alt="دراجة سونك مع 14 هدية" class="main-image">
-                <div class="thumbnails">
-                    <img src="https://i.ibb.co/XkSkXgB6/image.png" alt="دراجة سونك" class="thumbnail active" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/XkSkXgB6/image.png" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/XkSkXgB6/image.png" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                </div>
+                <div class="zoom-instruction">انقر على الصورة للتكبير</div>
             </div>
 
             <div class="details-section">
@@ -245,6 +228,7 @@
                     <li>قير شيمانو الياباني الأصلي</li>
                     <li>توصيل مجاني لجميع المدن خلال 3 أيام</li>
                     <li>الدفع عند الاستلام</li>
+                    <li>14 هدية مجانية مع كل دراجة</li>
                 </ul>
 
                 <a href="https://wa.me/966554685648?text=مرحباً، أريد شراء 'دراجة سونك مع 14 هدية' بسعر 559 ر.س من متجر العبدالله" class="whatsapp-btn">
@@ -270,17 +254,10 @@
 
     <div id="imageModal" class="zoom-modal">
         <span class="close-modal" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="zoomedImage">
+        <img class="modal-content" id="zoomedImage" src="https://i.ibb.co/XkSkXgB6/image.png" alt="دراجة سونك مع 14 هدية">
     </div>
 
     <script>
-        // Image gallery functionality
-        function changeImage(thumb) {
-            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-            thumb.classList.add('active');
-            document.getElementById('mainImage').src = thumb.src;
-        }
-
         // Zoom functionality
         const mainImage = document.getElementById('mainImage');
         const modal = document.getElementById('imageModal');
