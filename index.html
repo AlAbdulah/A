@@ -1,6 +1,53 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>متجر العبدالله</title>
+  <style>
+    body { 
+      font-family: Arial; 
+      background: #f5f5f5; 
+      padding: 20px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .buy-button {
+      display: block;
+      background: #25D366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
 <body>
-  <h1>TEST</h1>
+  <h1>My Store</h1>
+  
+  <div class="products">
+    <!-- PRODUCT EXAMPLE -->
+    <div class="product">
+      <img src="https://via.placeholder.com/300x200?text=Product+1" alt="Product 1">
+      <h2>دراجة سونك</h2>
+      <p>SAR559</p>
+      <a class="buy-button" href="https://wa.me/966554685648?text=Hi!%20I%20want%20to%20buy%20PRODUCT%20NAME">
+        Order on WhatsApp
+      </a>
+    </div>
+  </div>
 </body>
 </html>
