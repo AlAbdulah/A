@@ -251,20 +251,13 @@
     <div class="container">
         <div class="product-hero">
             <div class="gallery-section">
-                <img id="mainImage" src="https://i.ibb.co/dw2YVmCR/FGs-IZMUM55n-XGYIZfz-AUt-Uqh7-ORyd7-PLVs-UZus6p.webp" alt="دراجة سونك مع 14 هدية" class="main-image">
+                <!-- MAIN PRODUCT IMAGE (UPDATED TO YOUR SPECIFIED IMAGE) -->
+                <img id="mainImage" src="https://i.ibb.co/VhGkwn1/image.png" alt="دراجة سونك مع 14 هدية" class="main-image">
                 <div class="zoom-instruction">انقر على الصورة للتكبير</div>
                 
+                <!-- THUMBNAIL GALLERY -->
                 <div class="thumbnails">
-                    <img src="https://i.ibb.co/dw2YVmCR/FGs-IZMUM55n-XGYIZfz-AUt-Uqh7-ORyd7-PLVs-UZus6p.webp" alt="دراجة سونك" class="thumbnail active" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/fhGk9t4/Plezjg2n-SNs-KBPu3-Ud76-SSKc8w-Kavz-Lpo-Zbju-Pbt.webp" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/Xf1JTLFn/zYHuxl-GHhgl-Z9-RD5nd-TFU4d-Du-Yj8c-P2v-EUXUJu-Gr.webp" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/FqfYzLfQ/Ogwu-D0n-JVYR778f8-EPk-HICAr-Fpxu2g-Dw-W57-S1-F11.webp" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/cXXw54Z0/jaco-VH5-UGj-Ci-ATiat-Q5-OXXRa-OBb-Yf3-Eoyp-ZBn6xg.webp" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/pv3w2FT6/n3xbd-BJkqr-Oa0o-Vl-ZDGZZ0-Tt-YTv-JHym-ARM1-Law-G4.webp" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/20L1rvZ2/w9oi-L6ojv-YS7s-Isp-X9-K7-Gz1-AEyxy-Ag-Yokd3s-MRvo.webp" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/3xXvzFj/Zu-KI510-Ouq-Dsx-Zhd-DC2-Kpp-Ev6-IY5-MLcs-ZVviau-M8.webp" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/MxnKr90G/Eg3h-G0-Facqp-XZs-ZWm-T899-AWn-K4-UIy-E8od-IS63-Axu.webp" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://i.ibb.co/VhGkwn1/image.png" alt="دراجة سونك" class="thumbnail" onclick="changeImage(this)">
+                    <img src="https://i.ibb.co/VhGkwn1/image.png" alt="دراجة سونك" class="thumbnail active" onclick="changeImage(this)">
                 </div>
             </div>
 
@@ -310,9 +303,10 @@
         </div>
     </div>
 
+    <!-- ZOOM MODAL -->
     <div id="imageModal" class="zoom-modal">
         <span class="close-modal" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="zoomedImage">
+        <img class="modal-content" id="zoomedImage" src="https://i.ibb.co/VhGkwn1/image.png">
     </div>
 
     <script>
@@ -321,16 +315,15 @@
             document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
             document.getElementById('mainImage').src = thumb.src;
+            document.getElementById('zoomedImage').src = thumb.src;
         }
 
         // Zoom functionality
         const mainImage = document.getElementById('mainImage');
         const modal = document.getElementById('imageModal');
-        const zoomedImg = document.getElementById('zoomedImage');
 
         mainImage.onclick = function() {
             modal.style.display = "flex";
-            zoomedImg.src = this.src;
         }
 
         function closeModal() {
